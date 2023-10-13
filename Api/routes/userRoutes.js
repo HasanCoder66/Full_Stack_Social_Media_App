@@ -10,7 +10,7 @@ import {userUpdate, userDelete , getUsers}  from '../controllers/userContraller.
  userRoutes.delete('/:id', userDelete)
 
  // localhost:8800/api/:id
- userRoutes.get('/:id', getUsers)
+ userRoutes.get('/', getUsers)
 
  export default userRoutes 
 

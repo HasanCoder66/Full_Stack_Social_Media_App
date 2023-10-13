@@ -3,8 +3,9 @@ import { Users } from "../../dummydata";
 import Online from "../online/online";
 // import MainHome from "../../pages/home/home";
 
-function Rightbar({ profile }) {
-  // console.log(profile);
+function Rightbar({ user }) {
+
+  console.log(user);
 
   const HomeRightBar = () => {
     return (
@@ -41,15 +42,15 @@ function Rightbar({ profile }) {
         <div className="rightBarInfo">
           <div className="rightBarInfoItem">
             <span className="rightBarInfoKey">City:</span>
-            <span className="rightBarInfoValue">Karachi</span>
+            <span className="rightBarInfoValue">{user?.city }</span>
           </div>
           <div className="rightBarInfoItem">
             <span className="rightBarInfoKey">From:</span>
-            <span className="rightBarInfoValue">Pakistan</span>
+            <span className="rightBarInfoValue">{user?.from }</span>
           </div>
           <div className="rightBarInfoItem">
             <span className="rightBarInfoKey">RelationShip:</span>
-            <span className="rightBarInfoValue">Single</span>
+            <span className="rightBarInfoValue">{user?.relationship === 1 ? "Single" : user?.relationship ===  2 ? "Married"  : "-"}</span>
           </div>
         </div>
         <h4 className="rightBarTitle"> User Friends </h4>
@@ -114,7 +115,7 @@ function Rightbar({ profile }) {
     <div className="rightBar">
       <div className="rightbarWrapper">
         {/* <ProfileRightBar />  */}
-        {profile ? <ProfileRightBar /> : <HomeRightBar />}
+        {user ? <ProfileRightBar /> : <HomeRightBar />}
       </div>
     </div>
   );

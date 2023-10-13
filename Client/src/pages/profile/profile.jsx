@@ -4,15 +4,19 @@ import TopBar from "../../components/topbar/topbar";
 import Sidebar from "../../components/sidebar/sidebar";
 import Rightbar from "../../components/rightbar/rightbar";
 import Feed from "../../components/feed/feed";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function Profile() {
+  const [user , setUser] = useState({})
   useEffect(()=>{
-    const fetchPosts = async () => {
-     
-    
-    setPosts(res.data)
+    const fetchUser = async () => {
+     const res = await axios.get(`http://localhost:8800/api/user/?userName=hasan`)
+    //  console.log(res)
+    // ${post?.post?.userId}
+    setUser(res.data)
     }
-    fetchPosts()
+    fetchUser()
     }, [])
   return (
     <>
@@ -27,13 +31,13 @@ function Profile() {
                 <img className='profileUserImg' src="https://media.istockphoto.com/id/1457970648/photo/a-blonde-baby-boy-in-a-crib-at-home-with-blue-and-white-cotton-bedding-stands-holding-on-to.webp?b=1&s=612x612&w=0&k=20&c=oNCjKgPhPmvzWAuOJRbJPT91gG48OfMf96aclPvcm3Y=" alt="" />
             </div>
             <div className="profileInfo">
-                <h4 className="profileInfoName">Muhammad Hasan Ashraf</h4>
-                <span className="profileInfoDesc">Hello Social Media Community!</span>
+                <h4 className="profileInfoName">{user?.userName}</h4>
+                <span className="profileInfoDesc">{user?.desc} || Hello Social Media Community!</span>
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed userName='hammad' />
-            <Rightbar profile />
+            <Feed userName='hasan' />
+            <Rightbar user={user} />
           </div>
         </div>
       </div>

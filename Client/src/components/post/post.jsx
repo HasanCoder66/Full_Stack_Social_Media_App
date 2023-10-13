@@ -6,8 +6,6 @@ import {format} from 'timeago.js'
 import {Link} from 'react-router-dom'
 
 
-
-
 function Post(post) {
 
     // console.log(post, "post ka console")
@@ -20,7 +18,7 @@ function Post(post) {
     }
     useEffect(()=>{
         const fetchUser = async () => {
-         const res = await axios.get(`http://localhost:8800/api/user/${post?.post?.userId}`)
+         const res = await axios.get(`http://localhost:8800/api/user/?userId=${post?.post?.userId}`)
         //  console.log(res)
 
         setUser(res.data)
