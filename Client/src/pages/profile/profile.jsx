@@ -26,9 +26,12 @@ function Profile() {
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
-                <img className='profileCoverImg' src="https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_640.jpg" alt="" />
+                <img className='profileCoverImg' src={user?.coverPicture || "https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547_640.jpg" }alt="" />
               
-                <img className='profileUserImg' src="https://media.istockphoto.com/id/1457970648/photo/a-blonde-baby-boy-in-a-crib-at-home-with-blue-and-white-cotton-bedding-stands-holding-on-to.webp?b=1&s=612x612&w=0&k=20&c=oNCjKgPhPmvzWAuOJRbJPT91gG48OfMf96aclPvcm3Y=" alt="" />
+                <img className='profileUserImg'  src={user?.profilePicture || "https://media.istockphoto.com/id/1457970648/photo/a-blonde-baby-boy-in-a-crib-at-home-with-blue-and-white-cotton-bedding-stands-holding-on-to.webp?b=1&s=612x612&w=0&k=20&c=oNCjKgPhPmvzWAuOJRbJPT91gG48OfMf96aclPvcm3Y=" }
+                />
+                
+                
             </div>
             <div className="profileInfo">
                 <h4 className="profileInfoName">{user?.userName}</h4>
