@@ -12,7 +12,7 @@ function MainHome () {
     <TopBar/>
     <div className="homeContainer">
     <Sidebar/>
-    <Feed/>
+    <Feed userName='hasan'/>
     <Rightbar/>
     </div>
     

@@ -28,8 +28,9 @@ function Rightbar({ user }) {
         <h4 className="rightbarTitle"> Online Friends </h4>
         <ul className="rightbarFriendList">
           {Users.map((u) => (
-            <Online key={u.id} user={u} />
-          ))}
+             
+            <Online key={u.id} user={u}/>
+            ))}
         </ul>
       </>
     );
@@ -42,15 +43,18 @@ function Rightbar({ user }) {
         <div className="rightBarInfo">
           <div className="rightBarInfoItem">
             <span className="rightBarInfoKey">City:</span>
-            <span className="rightBarInfoValue">{user?.city }</span>
+            {/* ${user?.city } */}
+            <span className="rightBarInfoValue">{` Karachi`} </span>
           </div>
           <div className="rightBarInfoItem">
             <span className="rightBarInfoKey">From:</span>
-            <span className="rightBarInfoValue">{user?.from }</span>
+            {/* {user?.from } */}
+            <span className="rightBarInfoValue">Pakistan</span>
           </div>
           <div className="rightBarInfoItem">
             <span className="rightBarInfoKey">RelationShip:</span>
-            <span className="rightBarInfoValue">{user?.relationship === 1 ? "Single" : user?.relationship ===  2 ? "Married"  : "-"}</span>
+            {/* {user?.relationship === 1 ? "Single" : user?.relationship ===  2 ? "Married"  : "-"} */}
+            <span className="rightBarInfoValue">Single</span>
           </div>
         </div>
         <h4 className="rightBarTitle"> User Friends </h4>
@@ -114,8 +118,9 @@ function Rightbar({ user }) {
   return (
     <div className="rightBar">
       <div className="rightbarWrapper">
-        {/* <ProfileRightBar />  */}
-        {user ? <ProfileRightBar /> : <HomeRightBar />}
+      {/* <HomeRightBar /> */}
+        <ProfileRightBar /> 
+        {/* {user ? <ProfileRightBar /> : <HomeRightBar />} */}
       </div>
     </div>
   );

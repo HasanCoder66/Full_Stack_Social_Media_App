@@ -33,7 +33,8 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route path="/Profile/:username" element={<Profile/>} />
+          {/* <Route path="/Profile/:username" element={<Profile/>} /> */}
+          <Route path="/Profile/" element={<Profile/>} />
         </Routes>
 
 
